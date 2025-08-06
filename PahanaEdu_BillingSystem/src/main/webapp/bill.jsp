@@ -88,7 +88,7 @@
             <div class="col-lg-8">
                 <div class="card shadow rounded-4 border-0">
                     <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">🛍️ Available Items</h5>
+                        <h5 class="mb-0">Available Items</h5>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive table-container">
@@ -129,7 +129,7 @@
                                         <c:otherwise>
                                             <tr>
                                                 <td colspan="4" class="text-center text-danger py-5">
-                                                    <h6>📦 No items found in the database.</h6>
+                                                    <h6>No items found in the database.</h6>
                                                 </td>
                                             </tr>
                                         </c:otherwise>
@@ -146,7 +146,7 @@
                 <div class="bill-sidebar p-3">
                     <div class="card border-0 shadow">
                         <div class="card-header bg-success text-white">
-                            <h5 class="mb-0">🧾 Current Bill</h5>
+                            <h5 class="mb-0">Current Bill</h5>
                         </div>
                         <div class="card-body">
                             <!-- Bill Items -->
@@ -201,10 +201,10 @@
                                         <!-- Action Buttons -->
                                         <div class="mt-3 d-grid gap-2">
                                             <button class="btn btn-success btn-lg" onclick="generateBill()">
-                                                💳 Generate Bill
+                                                Generate Bill
                                             </button>
                                             <button class="btn btn-outline-danger" onclick="clearCart()">
-                                                🗑️ Clear Cart
+                                                Clear Cart
                                             </button>
                                         </div>
 
@@ -228,7 +228,7 @@
                     <!-- Quick Stats Card -->
                     <div class="card border-0 shadow mt-3">
                         <div class="card-body">
-                            <h6 class="card-title">📊 Quick Stats</h6>
+                            <h6 class="card-title">Quick Stats</h6>
                             <div class="row text-center">
                                 <div class="col-4">
                                     <div class="h4 text-primary mb-1">${not empty sessionScope.billList ? sessionScope.billList.size() : 0}</div>
