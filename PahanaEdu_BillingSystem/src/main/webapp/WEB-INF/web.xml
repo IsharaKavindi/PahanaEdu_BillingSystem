@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-inst..." xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web..." id="WebApp_ID" version="3.0">
+
+	<servlet>
+		<servlet-name>addUserServlet</servlet-name>
+		<servlet-class>servlet.addUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addUserServlet</servlet-name>
+		<url-pattern>/addusr</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>userLoginServlet</servlet-name>
+		<servlet-class>servlet.userLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userLoginServlet</servlet-name>
+		<url-pattern>/usrlog</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>viewUsersServlet</servlet-name>
+		<servlet-class>servlet.viewUsersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewUsersServlet</servlet-name>
+		<url-pattern>/usrview</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addCustomerServlet</servlet-name>
+		<servlet-class>servlet.addCustomerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addCustomerServlet</servlet-name>
+		<url-pattern>/addcus</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>viewCustomersServlet</servlet-name>
+		<servlet-class>servlet.viewCustomersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewCustomersServlet</servlet-name>
+		<url-pattern>/cusview</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addItemServlet</servlet-name>
+		<servlet-class>servlet.addItemServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addItemServlet</servlet-name>
+		<url-pattern>/additm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>viewItemServlet</servlet-name>
+		<servlet-class>servlet.viewItemServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewItemServlet</servlet-name>
+		<url-pattern>/viewitm</url-pattern>
+	</servlet-mapping>
+
+	
+    <servlet>
+        <servlet-name>viewBillingServlet</servlet-name>
+        <servlet-class>servlet.viewBillingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>viewBillingServlet</servlet-name>
+        <url-pattern>/viewbill</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>addToCartServlet</servlet-name>
+        <servlet-class>servlet.addToCartServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addToCartServlet</servlet-name>
+        <url-pattern>/addToCartServlet</url-pattern>
+    </servlet-mapping>
+
+	
+	  
+</web-app>

@@ -1,0 +1,75 @@
+package model;
+
+public class customer {
+	
+	int id;
+	String name;
+	String nic;
+	String accountnum;
+	String address;
+	String contactno;
+	String email;
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getNic() {
+		return nic;
+	}
+	
+	public void setNic(String nic) {
+		this.nic = nic;
+	}
+	
+	public String getAccountNum() {
+		return accountnum;
+	}
+	
+	public void setAccountNum(String accountnum) {
+		this.accountnum = accountnum;
+	}
+	
+	
+	public String getAddress() {
+		return address;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	public String getContactNo() {
+		return contactno;
+	}
+
+	public void setContactNo(String contactno) {
+		this.contactno = contactno;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+
+
+}

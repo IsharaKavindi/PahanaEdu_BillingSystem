@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+  body {
+    padding-top: 70px;
+  }
+ 
+ .nav-item {
+  padding: 0 20px; /* 20px left and right */
+}
+ 
+
+ body {
+      display: flex;
+      justify-content: center;   
+      align-items: center;       /* center vertically */
+      height: 100vh;             /* full height of viewport */
+      margin: 0;                 /* remove default margin */
+      padding: 20px;             /* optional: add space around content */
+      text-align: center;        /* center text inside child elements */
+      flex-direction: column; 
+      font-family: Arial, sans-serif; 
+    }
+    
+input[type="text"], input[type="password"], input[type="email"] {
+      width: 300px;        /* wider input */
+      height: 45px;        /* taller input */
+      font-size: 18px;     /* bigger text */
+      padding: 10px;
+      margin: 10px 0;      /* spacing between inputs */
+      border-radius: 8px;  /* optional rounded corners */
+      border: 1px solid #ccc;
+    }
+    
+    .box {
+      background-color: #ffffff;     /* outer box color */
+      padding: 50px;                 /* space inside box */
+      border-radius: 17px;           /* rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
+      text-align: center;
+      width: 400px;
+    }
+    
+        .box2 {
+      /* outer box color */
+      padding: 0px;                 /* space inside box */
+      border-radius: 17px;           /* rounded corners */
+     /* subtle shadow */
+      text-align:center;
+      margin:auto;
+    }
+    
+   .topic{
+   	  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #0d6efd;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+   
+    .button-group {
+      display: flex;
+      justify-content: center; /* Center the buttons inside the box */
+      gap: 10px;
+      gap: 35px;
+      align-items: center;   
+    }
+
+    .button-group a {
+      text-decoration: none;
+    }
+
+    .button-group .btn {
+      min-width: 120px;
+    }
+    
+       .topic1{
+   	  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  color: #0d6efd;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   }
+    
