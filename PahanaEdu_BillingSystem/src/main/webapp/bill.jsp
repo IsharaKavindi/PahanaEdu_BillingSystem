@@ -1,143 +1,286 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/NewCss.css">
-<meta charset="UTF-8">
-<title>Item List</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/NewCss.css">
+    <meta charset="UTF-8">
+    <title>Item List & Billing</title>
+    <style>
+        body {
+            padding-top: 76px; /* Account for fixed navbar */
+        }
+        .bill-sidebar {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 3px solid #007bff;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .bill-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            padding: 12px;
+            transition: transform 0.2s;
+        }
+        .bill-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .total-section {
+            background: #007bff;
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .empty-cart {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c757d;
+        }
+        .table-container {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top w-100">
-	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#">PananaEdu</a>
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-	      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	  
-	    <div class="collapse navbar-collapse" id="navbarContent">
-	      <ul class="navbar-nav ms-auto">
-	        <li class="nav-item">
-	          <a class="nav-link active" href="#">Calculate Bill</a>
-	        </li>
-	        <li class="nav-item">
-	        	<form action="viewItemServlet" method="post">
-	              <a class="nav-link" href="#"><button type="submit">View users</button></a>
-	            </form>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Manage Items</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Help</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Logout</a>
-	        </li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-	
-	<div class="container mt-4">
-  <div class="card shadow rounded-4 border-0">
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-hover table-striped align-middle mb-0">
-          <thead class="table-dark">
-            <tr>
-              <th scope="col">Item ID</th>
-              <th scope="col">Title</th>
-              <th scope="col">Price</th>
-              <th scope="col">Add to Cart</th>
-            </tr>
-          </thead>
-          <tbody>
-            <c:choose>
-              <c:when test="${not empty item}">
-                <c:forEach var="itm" items="${item}">
-                  <tr>
-                    <td>${itm.itemid}</td>
-                    <td>${itm.title}</td>
-                    <td>${itm.price}</td>
-                    <td>
-                      <form action="addToCartServlet" method="post">
-                        <input type="hidden" name="itemid" value="${itm.itemid}" />
-                        <input type="hidden" name="title" value="${itm.title}" />
-                        <input type="hidden" name="price" value="${itm.price}" />
-                        <input type="number" name="quantity" value="1" min="1" class="form-control d-inline-block w-25 me-2" />
-                        <button type="submit" class="btn btn-primary btn-sm">Add</button>
-                      </form>
-                    </td>
-                  </tr>
-                </c:forEach>
-              </c:when>
-              <c:otherwise>
-                <tr>
-                  <td colspan="4" class="text-center text-danger">No items found in the database.</td>
-                </tr>
-              </c:otherwise>
-            </c:choose>
-          </tbody>
-        </table>
-      </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top w-100">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PananaEdu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Calculate Bill</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="viewItemServlet" method="post">
+                            <a class="nav-link" href="#"><button type="submit">View users</button></a>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Manage Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Left Side - Items Table -->
+            <div class="col-lg-8">
+                <div class="card shadow rounded-4 border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">🛍️ Available Items</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive table-container">
+                            <table class="table table-hover table-striped align-middle mb-0">
+                                <thead class="table-dark sticky-top">
+                                    <tr>
+                                        <th scope="col">Item ID</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Price (Rs.)</th>
+                                        <th scope="col">Add to Cart</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:choose>
+                                        <c:when test="${not empty item}">
+                                            <c:forEach var="itm" items="${item}">
+                                                <tr>
+                                                    <td><span class="badge bg-secondary">#${itm.itemid}</span></td>
+                                                    <td><strong>${itm.title}</strong></td>
+                                                    <td><span class="text-success fw-bold">Rs. ${itm.price}</span></td>
+                                                    <td>
+                                                        <form action="billServlet" method="post" class="d-flex align-items-center">
+                                                            <input type="hidden" name="itemid" value="${itm.itemid}" />
+                                                            <input type="hidden" name="title" value="${itm.title}" />
+                                                            <input type="hidden" name="price" value="${itm.price}" />
+                                                            <div class="input-group" style="width: 120px;">
+                                                                <input type="number" name="quantity" value="1" min="1" 
+                                                                       class="form-control form-control-sm" />
+                                                                <button type="submit" class="btn btn-primary btn-sm">
+                                                                    ➕ Add
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr>
+                                                <td colspan="4" class="text-center text-danger py-5">
+                                                    <h6>📦 No items found in the database.</h6>
+                                                </td>
+                                            </tr>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Bill Display -->
+            <div class="col-lg-4">
+                <div class="bill-sidebar p-3">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">🧾 Current Bill</h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Bill Items -->
+                            <div class="bill-items">
+                                <c:choose>
+                                    <c:when test="${not empty sessionScope.billList}">
+                                        <c:set var="totalAmount" value="0" />
+                                        <c:set var="totalItems" value="0" />
+                                        
+                                        <c:forEach var="billItem" items="${sessionScope.billList}">
+                                            <div class="bill-item">
+                                                <div class="d-flex justify-content-between align-items-start">
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 text-primary">${billItem.title}</h6>
+                                                        <small class="text-muted">ID: ${billItem.itemid}</small>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <div class="fw-bold text-success">
+                                                            Rs. ${billItem.quantity * billItem.price}
+                                                        </div>
+                                                        <small class="text-muted">
+                                                            ${billItem.quantity} × Rs. ${billItem.price}
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <c:set var="totalAmount" value="${totalAmount + (billItem.quantity * billItem.price)}" />
+                                            <c:set var="totalItems" value="${totalItems + billItem.quantity}" />
+                                        </c:forEach>
+
+                                        <!-- Bill Summary -->
+                                        <div class="total-section">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Total Items:</span>
+                                                <span class="fw-bold">${totalItems}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Subtotal:</span>
+                                                <span class="fw-bold">Rs. ${totalAmount}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <span>Points Earned:</span>
+                                                <span class="fw-bold">${(totalAmount / 100).intValue()} pts</span>
+                                            </div>
+                                            <hr class="my-3" style="border-color: rgba(255,255,255,0.3);">
+                                            <div class="d-flex justify-content-between">
+                                                <span class="h5">Grand Total:</span>
+                                                <span class="h5 fw-bold">Rs. ${totalAmount}</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Action Buttons -->
+                                        <div class="mt-3 d-grid gap-2">
+                                            <button class="btn btn-success btn-lg" onclick="generateBill()">
+                                                💳 Generate Bill
+                                            </button>
+                                            <button class="btn btn-outline-danger" onclick="clearCart()">
+                                                🗑️ Clear Cart
+                                            </button>
+                                        </div>
+
+                                    </c:when>
+                                    <c:otherwise>
+                                        <div class="empty-cart">
+                                            <div class="mb-3">
+                                                <svg width="64" height="64" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                </svg>
+                                            </div>
+                                            <h6 class="text-muted">Your cart is empty</h6>
+                                            <p class="small text-muted mb-0">Add some items from the table to get started</p>
+                                        </div>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats Card -->
+                    <div class="card border-0 shadow mt-3">
+                        <div class="card-body">
+                            <h6 class="card-title">📊 Quick Stats</h6>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="h4 text-primary mb-1">${not empty sessionScope.billList ? sessionScope.billList.size() : 0}</div>
+                                    <small class="text-muted">Items</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h4 text-success mb-1">Rs. ${not empty sessionScope.billList ? totalAmount : 0}</div>
+                                    <small class="text-muted">Total</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h4 text-warning mb-1">${not empty sessionScope.billList ? (totalAmount / 100).intValue() : 0}</div>
+                                    <small class="text-muted">Points</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-
-<%
-	@SuppressWarnings("unchecked")
-    java.util.List<model.item> cart = (java.util.List<model.item>) session.getAttribute("cart");
-    int grandTotal = 0;
-    if (cart != null) {
-        for (model.item itm : cart) {
-            grandTotal += itm.getPrice() * itm.getQuantity();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function generateBill() {
+            if (${empty sessionScope.billList}) {
+                alert('Please add some items to the cart first!');
+                return;
+            }
+            
+            if (confirm('Generate bill for Rs. ${totalAmount}?')) {
+               
+                alert('Bill generated successfully!\nTotal: Rs. ${totalAmount}\nPoints Earned: ${(totalAmount / 100).intValue()}');
+                
+            }
         }
-        request.setAttribute("cart", cart);
-        request.setAttribute("grandTotal", grandTotal);
-    }
-%>
 
-<c:if test="${not empty cart}">
-    <div class="mt-5">
-        <h3>Billing Items</h3>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Item ID</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="itm" items="${cart}">
-                    <tr>
-                        <td>${itm.itemid}</td>
-                        <td>${itm.title}</td>
-                        <td>${itm.price}</td>
-                        <td>${itm.quantity}</td>
-                        <td>${itm.price * itm.quantity}</td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="4" style="text-align:right;"><b>Total:</b></td>
-                    <td><b>${grandTotal}</b></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-</c:if>
+        function clearCart() {
+            if (${not empty sessionScope.billList}) {
+                if (confirm('Are you sure you want to clear the cart?')) {
+                   
+                    window.location.href = 'clearCartServlet';
+                }
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const billItems = document.querySelector('.bill-items');
+            if (billItems) {
+                billItems.scrollTop = billItems.scrollHeight;
+            }
+        });
+    </script>
 
-	
 </body>
 </html>

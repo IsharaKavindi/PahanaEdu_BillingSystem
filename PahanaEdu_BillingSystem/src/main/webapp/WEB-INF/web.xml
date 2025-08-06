@@ -75,13 +75,13 @@
     </servlet-mapping>
     
         <servlet>
-        <servlet-name>addToCartServlet</servlet-name>
-        <servlet-class>servlet.addToCartServlet</servlet-class>
+        <servlet-name>billServlet</servlet-name>
+        <servlet-class>servlet.billServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>addToCartServlet</servlet-name>
-        <url-pattern>/addToCartServlet</url-pattern>
+        <servlet-name>billServlet</servlet-name>
+        <url-pattern>/bill</url-pattern>
     </servlet-mapping>
 
 	
