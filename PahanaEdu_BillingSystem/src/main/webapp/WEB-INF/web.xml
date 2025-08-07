@@ -84,6 +84,25 @@
         <url-pattern>/bill</url-pattern>
     </servlet-mapping>
 
+	<servlet>
+	    <servlet-name>generateBillServlet</servlet-name>
+	    <servlet-class>servlet.generateBillServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	    <servlet-name>generateBillServlet</servlet-name>
+	    <url-pattern>/generatebill</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	    <servlet-name>searchCustomerServlet</servlet-name>
+	    <servlet-class>servlet.searchCustomerServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	    <servlet-name>searchCustomerServlet</servlet-name>
+	    <url-pattern>/searchcustomer</url-pattern>
+	</servlet-mapping>
 	
 	  
 </web-app>

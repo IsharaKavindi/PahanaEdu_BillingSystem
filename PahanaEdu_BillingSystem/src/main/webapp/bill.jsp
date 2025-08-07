@@ -200,9 +200,11 @@
 
                                         <!-- Action Buttons -->
                                         <div class="mt-3 d-grid gap-2">
-                                            <button class="btn btn-success btn-lg" onclick="generateBill()">
+                                        <form action="generateBillServlet" method="post" class="d-flex align-items-center">
+                                            <button class="btn btn-success btn-lg">
                                                 Generate Bill
                                             </button>
+                                            </form>
                                             <button class="btn btn-outline-danger" onclick="clearCart()">
                                                 Clear Cart
                                             </button>
@@ -252,18 +254,36 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        function generateBill() {
-            if (${empty sessionScope.billList}) {
-                alert('Please add some items to the cart first!');
-                return;
-            }
-            
-            if (confirm('Generate bill for Rs. ${totalAmount}?')) {
-               
-                alert('Bill generated successfully!\nTotal: Rs. ${totalAmount}\nPoints Earned: ${(totalAmount / 100).intValue()}');
-                
+    function generateBill() {
+        const hasItems = ${not empty sessionScope.billList};
+        if (!hasItems) {
+            alert('Please add some items to the cart first!');
+            return;
+        }
+        
+        const totalAmount = ${not empty sessionScope.billList ? totalAmount : 0};
+        
+        if (confirm('Generate bill for Rs. ' + totalAmount + '?')) {
+            window.location.href = 'generateBillServlet';
+        }
+    }
+
+    function clearCart() {
+        const hasItems = ${not empty sessionScope.billList};
+        if (hasItems) {
+            if (confirm('Are you sure you want to clear the cart?')) {
+
+                window.location.href = 'clearCartServlet';
             }
         }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const billItems = document.querySelector('.bill-items');
+        if (billItems) {
+            billItems.scrollTop = billItems.scrollHeight;
+        }
+    });
 
         function clearCart() {
             if (${not empty sessionScope.billList}) {
