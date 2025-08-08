@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form action="updateItemServlet" method="post">
 		<c:set var="itm" value="${item}"/>	
 			<div class="form-floating mb-3">
 			  <input type="text" class="form-control" id="floatingInput" name="itemid" placeholder="Name" value="${itm.itemid}">
@@ -40,6 +41,13 @@
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Update Item</button>
+			
+		</form>
+		<c:if test="${not empty popupMessage}">
+		    <script>
+		        alert("${popupMessage}");
+		    </script>
+		</c:if>
 	
 	
 </body>

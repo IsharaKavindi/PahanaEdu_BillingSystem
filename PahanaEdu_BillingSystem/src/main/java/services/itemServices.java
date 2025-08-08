@@ -3,8 +3,6 @@ package services;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-
 import controller.DBConnect;
 import model.item;
 
@@ -82,7 +80,21 @@ public class itemServices {
 		return null;
 	}
 	
-	
+	public boolean updateItem(item itm) {
+		try {
+			
+			String query = "update item SET itemid='"+itm.getItemid()+"',title='"+itm.getTitle()+"', author='"+itm.getAuthor()+"',category='"+itm.getCategory()+"',price='"+itm.getPrice()+"',quantity='"+itm.getQuantity()+"' where itemid='"+itm.getItemid()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return false;
+		
+	}
 		
 		
 	
