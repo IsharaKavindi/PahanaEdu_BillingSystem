@@ -21,6 +21,13 @@
       font-family: Arial, sans-serif; 
     }
     
+    .collapse navbar-collapse{
+    	margin-bottom:40px;
+    }
+   .container mt-5 pt-4{
+    margin-top: 120px;
+}
+    
 input[type="text"], input[type="password"], input[type="email"] {
       width: 300px;        /* wider input */
       height: 45px;        /* taller input */

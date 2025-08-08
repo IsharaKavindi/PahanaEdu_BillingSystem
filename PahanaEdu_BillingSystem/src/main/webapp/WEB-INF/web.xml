@@ -74,7 +74,7 @@
         <url-pattern>/viewbill</url-pattern>
     </servlet-mapping>
     
-        <servlet>
+   	<servlet>
         <servlet-name>billServlet</servlet-name>
         <servlet-class>servlet.billServlet</servlet-class>
     </servlet>
@@ -104,5 +104,24 @@
 	    <url-pattern>/searchcustomer</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+	    <servlet-name>customerBillServlet</servlet-name>
+	    <servlet-class>servlet.customerBillServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	    <servlet-name>customerBillServlet</servlet-name>
+	    <url-pattern>/customerbill</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+        <servlet-name>addBillServlet</servlet-name>
+        <servlet-class>servlet.addBillServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addBillServlet</servlet-name>
+        <url-pattern>/addbill</url-pattern>
+    </servlet-mapping>
 	  
 </web-app>

@@ -55,7 +55,51 @@ public class customerServices {
 			return null;
 		}
 		
-		
 	}
+	
+	public boolean validateCus(customer cus) {
+		try {
+			String query = "select * from customer where name = '"+cus.getName()+"' and nic = '"+cus.getNic()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			
+			ResultSet rs = statement.executeQuery(query); 
+			
+			if(rs.next()) {
+				return true;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	public customer getCus(customer cus) {
+		try {
+			String query = "select * from customer where name = '"+cus.getName()+"' and nic = '"+cus.getNic()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			
+			ResultSet rs = statement.executeQuery(query); 
+			
+			if(rs.next()) {
+				cus.setId(rs.getInt("id"));
+				cus.setName(rs.getString("name"));
+				cus.setNic(rs.getString("nic"));
+				return cus;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	
 
 }

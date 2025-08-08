@@ -201,7 +201,7 @@
                                         <!-- Action Buttons -->
                                         <div class="mt-3 d-grid gap-2">
                                         <form action="generateBillServlet" method="post" class="d-flex align-items-center">
-                                            <button class="btn btn-success btn-lg">
+                                            <button class="btn btn-success btn-lg" onclick="generateBill()" >
                                                 Generate Bill
                                             </button>
                                             </form>
@@ -252,7 +252,6 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
     function generateBill() {
         const hasItems = ${not empty sessionScope.billList};

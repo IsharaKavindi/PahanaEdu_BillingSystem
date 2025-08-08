@@ -5,6 +5,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import controller.DBConnect;
+import model.bill;
 import model.billitem;
 
 
@@ -48,6 +49,25 @@ public class billServices {
         }
         return billList;
     }
+    
+	public boolean addBill(bill bl) {
+		try {
+			
+			String query = "insert into bill values('"+bl.getBillid()+"','"+bl.getBillnum()+"','"+bl.getDate()+"','"+bl.getTime()+"','"+bl.getTotalitems()+"','"+bl.getTotal()+"','"+bl.getPoints()+"','"+bl.getCusid()+"','"+bl.getCusnic()+"')";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return false;
+		
+	}
+	
+	
+	
 	
 
 }
