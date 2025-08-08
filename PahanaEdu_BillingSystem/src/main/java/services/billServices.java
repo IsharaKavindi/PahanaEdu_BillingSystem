@@ -62,7 +62,7 @@ public class billServices {
 			e.printStackTrace();
 			
 		}
-		return false;
+		return true;
 		
 	}
 	

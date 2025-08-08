@@ -140,13 +140,14 @@
 	        <div class="bill-details">
 	            <div class="bill-info">
 	                <h6>Bill Information</h6><br>
-			        <%
-					    if (session.getAttribute("billNumber") == null) {
-					        Random random = new Random();
-					        int num = 100000 + random.nextInt(900000); 
-					        String billNo = "BILL-" + num;
-					        session.setAttribute("billNumber", billNo);
-					    }
+					<%
+						if (session.getAttribute("billNumber") == null) {
+						    Random random = new Random();
+						    long timestamp = System.currentTimeMillis();
+						    int randomPart = random.nextInt(1000);
+						    String billNo = "BILL-" + timestamp + randomPart;
+						    session.setAttribute("billNumber", billNo);
+						}
 					%>
 			
 					<p class="mb-1"><strong>Bill No:</strong> 

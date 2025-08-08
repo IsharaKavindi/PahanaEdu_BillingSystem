@@ -72,7 +72,7 @@ public class addBillServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
         dispatcher.forward(request, response);
-        System.out.println("=== addBillServlet END ===");
+
     }
 
     private int parseIntOrDefault(String param, int defaultValue) {
