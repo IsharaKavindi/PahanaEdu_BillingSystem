@@ -63,6 +63,12 @@
 	              <td>${usr.username}</td>
 	              <td>${usr.age}</td>
 	              <td>${usr.email}</td>
+	              <td>
+	              	<form action="" method="post">
+						<input type="hidden" name="id" value="">
+						<input type="hidden" name="nic" value="">
+						<button type="submit">Update</button>
+					</form>
 	            </tr>
 	        </c:forEach>
 	          </tbody>

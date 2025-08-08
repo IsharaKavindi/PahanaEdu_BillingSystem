@@ -70,6 +70,7 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 <th scope="col">Address</th>
 <th scope="col">Contact No</th>
 <th scope="col">Email</th>
+<th scope="col">Action</th>
 </tr>
 </thead>
 <tbody>
@@ -82,6 +83,13 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 <th>${cus.address}</th>
 <th>${cus.contactNo}</th>
 <td>${cus.email}</td>
+<td>
+	<form action="singleData" method="post">
+		<input type="hidden" name="id" value="${cus.id}">
+		<input type="hidden" name="nic" value="${cus.nic}">
+		<button type="submit">Update</button>
+	</form>
+</td>
 </tr>
 </c:forEach>
 </tbody>

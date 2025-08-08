@@ -14,7 +14,7 @@
 	<c:set var="usr" value="${user}"/>	
 
 			<div class="form-floating mb-3">
-			  <input type="text" class="form-control" id="floatingInput" name="name"  placeholder="Name" value="${usr.name }">
+			  <input type="text" class="form-control" id="floatingInput" name="name"  placeholder="Name" value="${usr.name}">
 			  <label for="floatingInput">Name</label>
 			</div>
 			

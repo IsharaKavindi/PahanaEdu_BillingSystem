@@ -40,8 +40,6 @@
 	  </div>
 	</nav>
 
-
-	<div class="box">
 	
 		<form id="customerForm" method="post" action="addCustomerServlet">
 			

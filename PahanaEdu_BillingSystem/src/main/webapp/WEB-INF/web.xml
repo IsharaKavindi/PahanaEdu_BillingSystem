@@ -124,4 +124,33 @@
         <url-pattern>/addbill</url-pattern>
     </servlet-mapping>
 	  
+	<servlet>
+        <servlet-name>singleData</servlet-name>
+        <servlet-class>servlet.singleData</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>singleData</servlet-name>
+        <url-pattern>/singledata</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>singleItemData</servlet-name>
+        <servlet-class>servlet.singleItemData</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>singleItemData</servlet-name>
+        <url-pattern>/singleitemdata</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>updateCustomerServlet</servlet-name>
+        <servlet-class>servlet.updateCustomerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>updateCustomerServlet</servlet-name>
+        <url-pattern>/supdatecustomerservlet</url-pattern>
+    </servlet-mapping>
 </web-app>

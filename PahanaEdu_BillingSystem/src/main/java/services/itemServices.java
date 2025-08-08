@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import controller.DBConnect;
 import model.item;
 
+
 public class itemServices {
 	
 	public void regItem(item itm) {
@@ -53,6 +54,34 @@ public class itemServices {
 			return null;
 		}
 	  }
+	
+	
+	public item getItem(item itm) {
+		try {
+			String query = "select * from item where itemid = '"+itm.getItemid()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			
+			ResultSet rs = statement.executeQuery(query); 
+			
+			if(rs.next()) {
+				itm.setItemid(rs.getString("itemid"));
+				itm.setTitle(rs.getString("title"));
+				itm.setAuthor(rs.getString("author"));
+				itm.setCategory(rs.getString("category"));
+				itm.setPrice(rs.getInt("price"));
+				itm.setQuantity(rs.getInt("quantity"));
+				return itm;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
 	
 		
 		

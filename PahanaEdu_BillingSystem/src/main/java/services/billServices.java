@@ -53,7 +53,7 @@ public class billServices {
 	public boolean addBill(bill bl) {
 		try {
 			
-			String query = "insert into bill values('"+bl.getBillid()+"','"+bl.getBillnum()+"','"+bl.getDate()+"','"+bl.getTime()+"','"+bl.getTotalitems()+"','"+bl.getTotal()+"','"+bl.getPoints()+"','"+bl.getCusid()+"','"+bl.getCusnic()+"')";
+			String query = "insert into bills values('"+bl.getBillid()+"','"+bl.getBillnum()+"','"+bl.getDate()+"','"+bl.getTime()+"','"+bl.getTotalitems()+"','"+bl.getTotal()+"','"+bl.getPoints()+"','"+bl.getCusid()+"','"+bl.getCusnic()+"')";
 			
 			Statement statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);
@@ -65,6 +65,8 @@ public class billServices {
 		return true;
 		
 	}
+	
+	
 	
 	
 	

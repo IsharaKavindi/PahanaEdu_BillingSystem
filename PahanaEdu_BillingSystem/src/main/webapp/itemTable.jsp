@@ -78,6 +78,12 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 <td>${itm.category}</td>
 <th>${itm.price}</th>
 <th>${itm.quantity}</th>
+<td>
+	<form action="singleItemData" method="post">
+		<input type="hidden" name="itemid" value="${itm.itemid}">
+		<button type="submit">Update</button>
+	</form>
+</td>
 </tr>
 </c:forEach>
 </tbody>

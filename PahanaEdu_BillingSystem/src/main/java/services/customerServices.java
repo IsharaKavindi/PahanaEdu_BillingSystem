@@ -100,6 +100,49 @@ public class customerServices {
 		return null;
 	}
 	
+	public customer singleData(customer cus) {
+		try {
+			String query = "select * from customer where id = '"+cus.getId()+"' and nic = '"+cus.getNic()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			
+			ResultSet rs = statement.executeQuery(query); 
+			
+			if(rs.next()) {
+				cus.setId(rs.getInt("id"));
+				cus.setName(rs.getString("name"));
+				cus.setNic(rs.getString("nic"));
+				cus.setAccountNum(rs.getString("accountnum"));
+				cus.setAddress(rs.getString("address"));
+				cus.setContactNo(rs.getString("contactno"));
+				cus.setEmail(rs.getString("email"));
+				return cus;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	
+	public boolean updateCustomer(customer cus) {
+		try {
+			
+			String query = "update customer SET id='"+cus.getId()+"',name='"+cus.getName()+"', nic='"+cus.getNic()+"',accountnum='"+cus.getAccountNum()+"',address='"+cus.getAddress()+"',contactno='"+cus.getContactNo()+"',email='"+cus.getEmail()+"' where id='"+cus.getId()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return false;
+		
+	}
 	
 
 }
