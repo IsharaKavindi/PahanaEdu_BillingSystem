@@ -16,15 +16,9 @@
       text-align: center;       
       flex-direction: column; 
       font-family: Arial, sans-serif; 
-      padding-top: 200px; 
+
     }
 
-
-
-
-.navbar.fixed-top {
-    z-index: 1050;
-}
     
 input[type="text"], input[type="password"], input[type="email"] {
       width: 300px;       

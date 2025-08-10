@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top w-100">
 <div class="container-fluid">
-<a class="navbar-brand" href="#">PananaEdu</a>
+<a class="navbar-brand" href="userDash.jsp">PananaEdu</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -31,14 +31,12 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 	</form>
 </li>
 <li class="nav-item">
-	<form action="" method="post">
-<a class="nav-link" href="#"><button type="submit" style="background-color: #212529; color: white; border: none;">Help</button></a>
-	</form>
+<a class="nav-link" href="help.jsp"><button type="submit" style="background-color: #212529; color: white; border: none;">Help</button></a>
 </li>
 <li class="nav-item">
-	<form action="" method="post">
-<a class="nav-link" href="#"><button type="submit" style="background-color: #212529; color: white; border: none;">Exist</button></a>
-	</form>
+
+<a  class="nav-link" href="home.jsp"><button type="submit" style="background-color: #212529; color: white; border: none;">Exist</button></a>
+
 </li>
 </ul>
 </div>

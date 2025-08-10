@@ -39,7 +39,7 @@ public class userLoginServlet extends HttpServlet {
 		if(status) {
 		    user loginedUsr = service.getOne(usr);
 
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("userProfile.jsp");
+		    RequestDispatcher dispatcher = request.getRequestDispatcher("userDash.jsp");
 		    request.setAttribute("user",loginedUsr);
 		    dispatcher.forward(request,response);
 		}else {

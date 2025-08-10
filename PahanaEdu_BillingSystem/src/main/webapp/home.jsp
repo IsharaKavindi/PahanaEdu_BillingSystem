@@ -6,56 +6,138 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/NewCss.css">
 <style>
-	
-	 body {
-      background-image: url("../Images/image1.jpg"); /* Replace with your image path */
-      background-size: cover;                 /* Cover entire screen */
-      background-position: center;            /* Center the image */
-      background-repeat: no-repeat;
-      font-family: Arial, sans-serif; 
+body {
+    background: linear-gradient(135deg, #4a5568, #2d3748, #1a202c);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box2 {
+    background: rgba(26, 32, 44, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 450px;
+    width: 100%;
+    margin: 20px;
+    text-align: left;
+}
+
+.topic1 {
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.topic1:first-child {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.topic1:nth-child(2) {
+    font-size: 24px;
+    color: #a0aec0;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.btn.btn-primary {
+    background: #fbbf24;
+    border: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.btn.btn-primary:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .box2 {
+        padding: 30px 25px;
+        margin: 15px;
     }
     
-	.btn btn-primary{
-		padding:60px;
-	}
+    .topic1:first-child {
+        font-size: 28px;
+    }
+    
+    .topic1:nth-child(2) {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box2 {
+        padding: 25px 20px;
+        margin: 10px;
+    }
+    
+    .topic1:first-child {
+        font-size: 24px;
+    }
+    
+    .topic1:nth-child(2) {
+        font-size: 18px;
+    }
+    
+    .btn.btn-primary {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<div class="box2">
-	<h2 class="topic1">Welcome to</h2><br></br>
-	<h2 class="topic1">Pahana Edu Billing System</h2><br></br>
-	<br></br><br>
-		<div class="button-group">
-			<a href="userLogin.jsp">
-				<button type="button" class="btn btn-primary">User Login</button>
-			</a>
-		
-			<a href="userLogin.jsp">
-				<button type="button" class="btn btn-primary">User Login</button>
-			</a>
-		</div>
-	</div>
-	
-	<form action="viewUsersServlet" method="post">
-		<button type="submit">View users</button>
-	</form>
-	
-	<form action="viewCustomersServlet" method="post">
-		<button type="submit">View customers</button>
-	</form>
-	
-	<form action="viewItemServlet" method="post">
-		<button type="submit">View items</button>
-	</form>
-	
-		<form action="viewBillingServlet" method="post">
-		<button type="submit">Calculate Bill</button>
-	</form>
-	
 
-		
+<div class="box2">
+    <h2 class="topic1">Welcome to</h2>
+    <h2 class="topic1">Pahana Edu Billing System</h2>
+
+    
+    <div class="button-group">
+        <a href="userLogin.jsp">
+            <button type="button" class="btn btn-primary">User Login</button>
+        </a>
+
+        <a href="userLogin.jsp">
+            <button type="button" class="btn btn-primary">Admin Login</button>
+        </a>
+    </div>
+</div>
+
 </body>
 </html>

@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2)">
 	<div class="box">
 	
 		<div class="topic">User Login</div>

@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/NewCss.css">
     <meta charset="UTF-8">
-    <title>Item List & Billing</title>
+    <title>Item List and Billing</title>
     <style>
         body {
+       		 background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
             padding-top: 76px; /* Account for fixed navbar */
         }
         .bill-sidebar {

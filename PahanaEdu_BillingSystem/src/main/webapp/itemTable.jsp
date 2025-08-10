@@ -4,10 +4,65 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Item Management</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/NewCss.css">
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="css/NewCss1.css">
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .table thead {
+        background: #343a40;
+        color: white;
+    }
+    .table tbody tr:hover {
+        background-color: #f1f5ff;
+        transition: background 0.3s ease;
+    }
+    #searchInput {
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .action-btn {
+        background-color: #495057;
+        color: white;
+        border-radius: 6px;
+        padding: 4px 10px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .action-btn:hover {
+        background-color: #343a40;
+    }
+
+    .action-btns {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-primary {
+        box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
+        border-radius: 8px;
+        font-weight: 600;
+    }
+    .btn-secondary {
+        border-radius: 8px;
+    }
+</style>
 </head>
 <body>
 
@@ -15,64 +70,73 @@ pageEncoding="UTF-8"%>
 
 <div class="container mt-4">
 
-<!-- Search Bar - ADDED -->
-<div class="row mb-3">
-<div class="col-md-6">
-<input type="text" id="searchInput" class="form-control" placeholder="Search by Item ID or Title...">
-</div>
-<div class="col-md-6">
-<button id="clearSearch" class="btn btn-secondary" style="display: none;">Clear</button>
-</div>
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-4">
+            <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search by Item ID or Title...">
+        </div>
+        <div class="col-md-4">
+            <button id="clearSearch" class="btn btn-secondary w-100" style="display: none;">Clear</button>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <a href="addItems.jsp" class="btn btn-primary">
+                ➕ Add New Item
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow rounded-4 border-0">
+        <div class="card-body p-3">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col" class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemTableBody">
+                        <c:forEach var="itm" items="${item}">
+                            <tr class="item-row">
+                                <td class="item-id">${itm.itemid}</td>
+                                <td class="item-title">${itm.title}</td>
+                                <td>${itm.author}</td>
+                                <td>${itm.category}</td>
+                                <td>${itm.price}</td>
+                                <td>${itm.quantity}</td>
+                                <td class="action-btns">
+                                    <form action="singleItemData" method="post">
+                                        <input type="hidden" name="itemid" value="${itm.itemid}">
+                                        <button type="submit" class="action-btn">Update</button>
+                                    </form>
+                                    <form action="singleItemData" method="post">
+                                        <input type="hidden" name="itemid" value="${itm.itemid}">
+                                        <button type="submit" class="action-btn">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="card shadow rounded-4 border-0">
-<div class="card-body">
-<div class="table-responsive">
-<table class="table table-hover table-striped align-middle mb-0">
-<thead class="table-dark">
-<tr>
-<th scope="col">Item ID</th>
-<th scope="col">Title</th>
-<th scope="col">Author</th>
-<th scope="col">Categoty</th>
-<th scope="col">Price</th>
-<th scope="col">Quantity</th>
-</tr>
-</thead>
-<tbody id="itemTableBody">
-<c:forEach var="itm" items="${item}">
-<tr class="item-row">
-<th class="item-id">${itm.itemid}</th>
-<th class="item-title">${itm.title}</th>
-<td>${itm.author}</td>
-<td>${itm.category}</td>
-<th>${itm.price}</th>
-<th>${itm.quantity}</th>
-<td>
-	<form action="singleItemData" method="post">
-		<input type="hidden" name="itemid" value="${itm.itemid}">
-		<button type="submit">Update</button>
-	</form>
-</td>
-</tr>
-</c:forEach>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
 
-<!-- JavaScript for Search - ADDED -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const clearButton = document.getElementById('clearSearch');
     const itemRows = document.querySelectorAll('.item-row');
-    
+
     searchInput.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase().trim();
-        
+
         if (searchTerm === '') {
             itemRows.forEach(row => {
                 row.style.display = '';
@@ -82,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
             itemRows.forEach(row => {
                 const itemId = row.querySelector('.item-id').textContent.toLowerCase();
                 const itemTitle = row.querySelector('.item-title').textContent.toLowerCase();
-                
+
                 if (itemId.includes(searchTerm) || itemTitle.includes(searchTerm)) {
                     row.style.display = '';
                 } else {
@@ -92,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clearButton.style.display = 'inline-block';
         }
     });
-    
+
     clearButton.addEventListener('click', function() {
         searchInput.value = '';
         searchInput.dispatchEvent(new Event('input'));

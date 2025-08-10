@@ -6,42 +6,18 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/NewCss.css">
 <meta charset="UTF-8">
+
 <title>Insert title here</title>
 </head>
 <body>
 	
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top w-100">
-	  <div class="container-fluid">
-	    <a class="navbar-brand" href="#">PananaEdu</a>
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-	      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	  
-	    <div class="collapse navbar-collapse" id="navbarContent">
-	      <ul class="navbar-nav ms-auto">
-	        <li class="nav-item">
-	          <a class="nav-link active" href="#">Calculate Bill</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Manage Customers</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Manage Items</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Help</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Logout</a>
-	        </li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-
-	
+	<div class="box">
 		<form id="customerForm" method="post" action="addCustomerServlet">
+			
+			<div class="form-floating mb-3">
+			  <input type="text" class="form-control" id="floatingInput" name="id" placeholder="ID">
+			  <label for="floatingInput">ID</label>
+			</div> 
 			
 			<div class="form-floating mb-3">
 			  <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Name">
@@ -77,6 +53,8 @@
 	
 		</form>
 	</div>
+	
+
 	
 	
 	<script>

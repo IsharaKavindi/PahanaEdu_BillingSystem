@@ -33,7 +33,7 @@ public class addCustomerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		customer cus = new customer();
-	
+		cus.setId(Integer.parseInt(request.getParameter("id")));
 		cus.setName(request.getParameter("name"));
 		cus.setNic(request.getParameter("nic"));
 		cus.setAccountNum(request.getParameter("accountnum"));

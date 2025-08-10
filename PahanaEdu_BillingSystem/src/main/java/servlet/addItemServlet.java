@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,7 +43,12 @@ public class addItemServlet extends HttpServlet {
 		itemServices service = new itemServices();
 		service.regItem(itm);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+		 ArrayList<item> itemList = service.getAllItems();
+	        
+	        // Set as request attribute
+	        request.setAttribute("items", itemList);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("itemTable.jsp");
 		
 		dispatcher.forward(request,response);
 		

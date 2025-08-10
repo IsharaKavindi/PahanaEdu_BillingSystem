@@ -11,6 +11,7 @@
 <body>
 	<h1>My profile</h1>
 	
+	
 	<c:set var="usr" value="${user}"/>	
 
 			<div class="form-floating mb-3">

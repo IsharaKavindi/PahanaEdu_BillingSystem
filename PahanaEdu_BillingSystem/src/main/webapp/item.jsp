@@ -4,10 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/NewCss.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+
+	<div class="box">
 	<form action="updateItemServlet" method="post">
 		<c:set var="itm" value="${item}"/>	
 			<div class="form-floating mb-3">
@@ -48,7 +52,7 @@
 		        alert("${popupMessage}");
 		    </script>
 		</c:if>
-	
+	</div>
 	
 </body>
 </html>

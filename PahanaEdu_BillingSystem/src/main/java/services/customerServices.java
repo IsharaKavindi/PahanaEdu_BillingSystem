@@ -14,7 +14,7 @@ public class customerServices {
 	public void regCustomer(customer cus) {
 		try {
 			
-			String query = "insert into customer values('"+cus.getName()+"','"+cus.getNic()+"','"+cus.getAccountNum()+"','"+cus.getAddress()+"','"+cus.getContactNo()+"','"+cus.getEmail()+"')";
+			String query = "insert into customer values('"+cus.getId()+"','"+cus.getName()+"','"+cus.getNic()+"','"+cus.getAccountNum()+"','"+cus.getAddress()+"','"+cus.getContactNo()+"','"+cus.getEmail()+"')";
 			
 			Statement statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);
