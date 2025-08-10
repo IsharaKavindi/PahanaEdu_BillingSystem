@@ -1,57 +1,53 @@
 @charset "UTF-8";
 
-  body {
-    padding-top: 70px;
-  }
- 
+
  .nav-item {
-  padding: 0 20px; /* 20px left and right */
+  padding: 0 20px;
 }
  
 
  body {
       display: flex;
       justify-content: center;   
-      align-items: center;       /* center vertically */
-      height: 100vh;             /* full height of viewport */
-      margin: 0;                 /* remove default margin */
-      padding: 20px;             /* optional: add space around content */
-      text-align: center;        /* center text inside child elements */
+      align-items: center;      
+      height: 100vh;             
+      margin: 0;              
+      padding: 20px;             
+      text-align: center;       
       flex-direction: column; 
       font-family: Arial, sans-serif; 
+      padding-top: 200px; 
     }
-    
-    .collapse navbar-collapse{
-    	margin-bottom:40px;
-    }
-   .container mt-5 pt-4{
-    margin-top: 120px;
+
+
+
+
+.navbar.fixed-top {
+    z-index: 1050;
 }
     
 input[type="text"], input[type="password"], input[type="email"] {
-      width: 300px;        /* wider input */
-      height: 45px;        /* taller input */
-      font-size: 18px;     /* bigger text */
+      width: 300px;       
+      height: 45px;        
+      font-size: 18px;     
       padding: 10px;
-      margin: 10px 0;      /* spacing between inputs */
-      border-radius: 8px;  /* optional rounded corners */
+      margin: 10px 0;    
+      border-radius: 8px; 
       border: 1px solid #ccc;
     }
     
     .box {
-      background-color: #ffffff;     /* outer box color */
-      padding: 50px;                 /* space inside box */
-      border-radius: 17px;           /* rounded corners */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
+      background-color: #ffffff;    
+      padding: 50px;                 
+      border-radius: 17px;           
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
       text-align: center;
       width: 400px;
     }
     
         .box2 {
-      /* outer box color */
-      padding: 0px;                 /* space inside box */
-      border-radius: 17px;           /* rounded corners */
-     /* subtle shadow */
+      padding: 0px;               
+      border-radius: 17px;          
       text-align:center;
       margin:auto;
     }
@@ -67,7 +63,7 @@ input[type="text"], input[type="password"], input[type="email"] {
    
     .button-group {
       display: flex;
-      justify-content: center; /* Center the buttons inside the box */
+      justify-content: center; 
       gap: 10px;
       gap: 35px;
       align-items: center;   
@@ -91,4 +87,6 @@ input[type="text"], input[type="password"], input[type="email"] {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
    }
+   
+   
     

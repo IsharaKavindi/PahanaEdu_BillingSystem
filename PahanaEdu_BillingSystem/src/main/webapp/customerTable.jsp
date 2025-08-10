@@ -11,39 +11,8 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top w-100">
-<div class="container-fluid">
-<a class="navbar-brand" href="#">PananaEdu</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
+<%@ include file="nav.jsp" %>
 
-<div class="collapse navbar-collapse" id="navbarContent">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item">
-<a class="nav-link active" href="#">Calculate Bill</a>
-</li>
-<li class="nav-item">
-<form action="viewCustomersServlet" method="post">
-<a class="nav-link" href="#"><button type="submit">View users</button></a>
-</form>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Manage Items</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Help</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Logout</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-
-<br></br>
 
 <div class="container mt-5 pt-4">
 
@@ -84,10 +53,16 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 <th>${cus.contactNo}</th>
 <td>${cus.email}</td>
 <td>
+	<form action="singleCustomerDataServlet" method="post">
+		<input type="hidden" name="id" value="${cus.id}">
+		<input type="hidden" name="nic" value="${cus.nic}">
+		<button type="submit"  style="background-color: rgb(73, 80, 87); color: white; border: none; padding: 2px 6px; margin-bottom: 3px; border-radius:4px;">View</button>
+	</form>
+
 	<form action="singleData" method="post">
 		<input type="hidden" name="id" value="${cus.id}">
 		<input type="hidden" name="nic" value="${cus.nic}">
-		<button type="submit">Update</button>
+		<button type="submit"  style="background-color: rgb(73, 80, 87); color: white; border: none; padding: 2px 6px; margin-bottom: 3px; border-radius:4px;">Update</button>
 	</form>
 </td>
 </tr>
