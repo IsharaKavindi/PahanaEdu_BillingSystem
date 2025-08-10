@@ -153,4 +153,14 @@
         <servlet-name>updateCustomerServlet</servlet-name>
         <url-pattern>/supdatecustomerservlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>singleCustomerDataServlet</servlet-name>
+        <servlet-class>servlet.singleCustomerDataServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>singleCustomerDataServlet</servlet-name>
+        <url-pattern>/singlecustomerdata</url-pattern>
+    </servlet-mapping>
 </web-app>
