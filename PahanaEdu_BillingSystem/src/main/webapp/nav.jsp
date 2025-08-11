@@ -16,11 +16,6 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 	</form>
 </li>
 <li class="nav-item">
-<form action="viewUsersServlet" method="post">
-<a class="nav-link" href="#"><button type="submit" style="background-color: #212529; color: white; border: none;">View users</button></a>
-</form>
-</li>
-<li class="nav-item">
 	<form action="viewCustomersServlet" method="post">
 <a class="nav-link" href="#"><button type="submit" style="background-color: #212529; color: white; border: none;">Manage Customers</button></a>
 	</form>
@@ -29,6 +24,11 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 	<form action="viewItemServlet" method="post">
 <a class="nav-link" href="#"><button type="submit" style="background-color: #212529; color: white; border: none;">Manage Items</button></a>
 	</form>
+</li>
+<li class="nav-item">
+<form action="viewBillHistory" method="post">
+<a class="nav-link" href="#"><button type="submit" style="background-color: #212529; color: white; border: none;">View Bills</button></a>
+</form>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="help.jsp"><button type="submit" style="background-color: #212529; color: white; border: none;">Help</button></a>

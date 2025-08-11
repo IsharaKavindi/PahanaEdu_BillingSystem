@@ -24,6 +24,7 @@
             justify-content: flex-start;
             height: 100vh;
             padding-left: 50px;
+            
             background: linear-gradient(to right, #343a40, #495057);
             color: white;
         }
@@ -90,7 +91,7 @@
 				<button class="btn-start" type="submit">Manage Cashiers</button>
 			</form>
 			
-			<form action="viewUsersServlet" method="post">
+			<form action="manageBillsServlet" method="post">
 				<button class="btn-start" type="submit">Manage Bills</button>
 			</form>
 	    </div>
