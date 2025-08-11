@@ -193,4 +193,14 @@
         <servlet-name>deleteBillsServlet</servlet-name>
         <url-pattern>/deletebills</url-pattern>
     </servlet-mapping>
+    
+   <servlet>
+        <servlet-name>deleteItemsServlet</servlet-name>
+        <servlet-class>servlet.deleteItemsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteItemsServlet</servlet-name>
+        <url-pattern>/deleteItem</url-pattern>
+    </servlet-mapping>
 </web-app>

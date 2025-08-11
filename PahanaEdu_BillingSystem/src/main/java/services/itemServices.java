@@ -95,6 +95,23 @@ public class itemServices {
 		return false;
 		
 	}
+	
+	
+	public boolean deleteItems(item itm) {
+		try {
+			
+			String query = "Delete from item where itemid = '"+itm.getItemid()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return true;
+		
+	}
 		
 		
 	

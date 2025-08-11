@@ -113,7 +113,7 @@ pageEncoding="UTF-8"%>
                                         <input type="hidden" name="itemid" value="${itm.itemid}">
                                         <button type="submit" class="action-btn">Update</button>
                                     </form>
-                                    <form action="singleItemData" method="post">
+                                    <form action="deleteItemsServlet" method="post">
                                         <input type="hidden" name="itemid" value="${itm.itemid}">
                                         <button type="submit" class="action-btn">Delete</button>
                                     </form>
