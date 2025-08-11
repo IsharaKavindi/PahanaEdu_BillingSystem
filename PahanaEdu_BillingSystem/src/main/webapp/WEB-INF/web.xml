@@ -163,4 +163,34 @@
         <servlet-name>singleCustomerDataServlet</servlet-name>
         <url-pattern>/singlecustomerdata</url-pattern>
     </servlet-mapping>
+    
+   <servlet>
+        <servlet-name>viewBillHistory</servlet-name>
+        <servlet-class>servlet.viewBillHistory</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>viewBillHistory</servlet-name>
+        <url-pattern>/viewbillhistory</url-pattern>
+    </servlet-mapping>
+    
+   	<servlet>
+        <servlet-name>manageBillsServlet</servlet-name>
+        <servlet-class>servlet.manageBillsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>manageBillsServlet</servlet-name>
+        <url-pattern>/managebills</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>deleteBillsServlet</servlet-name>
+        <servlet-class>servlet.deleteBillsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteBillsServlet</servlet-name>
+        <url-pattern>/deletebills</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -93,6 +93,22 @@ public class billServices {
         return billList;
     }
 	
+    
+	public boolean deleteBills(bill bl) {
+		try {
+			
+			String query = "Delete from bills where billid = '"+bl.getBillid()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return true;
+		
+	}
 	
 	
 

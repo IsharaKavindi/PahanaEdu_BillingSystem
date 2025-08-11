@@ -102,9 +102,8 @@
                                 <td>${bl.cusnic}</td>
 								<td>
 								  <div style="display: flex; gap: 5px;">
-								    <form action="singleCustomerDataServlet" method="post">
-								      <input type="hidden" name="id" value="${cus.id}">
-								      <input type="hidden" name="nic" value="${cus.nic}">
+								    <form action="deleteBillsServlet" method="post">
+								      <input type="hidden" name="billid" value="${bl.billid}">
 								      <button type="submit" class="btn btn-custom">Delete</button>
 								    </form>
 								  </div>

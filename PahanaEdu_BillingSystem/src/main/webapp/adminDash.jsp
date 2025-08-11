@@ -12,6 +12,7 @@
 		  padding: 0 20px;
 		}
         body {
+        	
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
             margin: 0;
@@ -77,7 +78,7 @@
         }
     </style>
 </head>
-<body>
+<body >
 	<%@ include file="nav.jsp" %>
 
     <div class="dashboard-container">
