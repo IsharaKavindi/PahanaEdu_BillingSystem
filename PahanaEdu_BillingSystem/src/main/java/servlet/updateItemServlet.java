@@ -41,7 +41,7 @@ public class updateItemServlet extends HttpServlet {
 		service.updateItem(itm);
 		
 		request.setAttribute("popupMessage", "Customer updated successfully!");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("singleItemData");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewItemServlet");
 		
 		dispatcher.forward(request,response);
 	}

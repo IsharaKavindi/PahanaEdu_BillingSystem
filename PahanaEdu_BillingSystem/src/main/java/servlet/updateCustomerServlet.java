@@ -42,7 +42,7 @@ public class updateCustomerServlet extends HttpServlet {
 		service.updateCustomer(cus);
 		
 		request.setAttribute("popupMessage", "Customer updated successfully!");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("singleData");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewCustomersServlet");
 		
 		dispatcher.forward(request,response);
 	}

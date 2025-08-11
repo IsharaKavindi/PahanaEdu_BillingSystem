@@ -70,7 +70,7 @@ public class addBillServlet extends HttpServlet {
             request.setAttribute("error", "Error creating bill: " + e.getMessage());
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("viewBillingServlet");
         dispatcher.forward(request, response);
 
     }

@@ -48,7 +48,7 @@ public class addItemServlet extends HttpServlet {
 	        // Set as request attribute
 	        request.setAttribute("items", itemList);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("itemTable.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewItemServlet");
 		
 		dispatcher.forward(request,response);
 		

@@ -44,7 +44,7 @@ public class addCustomerServlet extends HttpServlet {
 		customerServices service = new customerServices();
 		service.regCustomer(cus);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewCustomersServlet");
 		
 		dispatcher.forward(request,response);
 		
