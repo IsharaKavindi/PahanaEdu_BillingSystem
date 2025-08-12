@@ -203,4 +203,14 @@
         <servlet-name>deleteItemsServlet</servlet-name>
         <url-pattern>/deleteItem</url-pattern>
     </servlet-mapping>
+    
+   <servlet>
+        <servlet-name>clearBillServlet</servlet-name>
+        <servlet-class>servlet.clearBillServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>clearBillServlet</servlet-name>
+        <url-pattern>/clearBill</url-pattern>
+    </servlet-mapping>
 </web-app>

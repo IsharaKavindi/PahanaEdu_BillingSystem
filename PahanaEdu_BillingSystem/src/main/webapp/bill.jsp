@@ -11,7 +11,7 @@
     <style>
         body {
        		 background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            padding-top: 76px; /* Account for fixed navbar */
+            padding-top: 76px; 
         }
         .bill-sidebar {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -160,7 +160,7 @@
                                             </div>
                                             <div class="d-flex justify-content-between mb-3">
                                                 <span>Points Earned:</span>
-                                                <span class="fw-bold">${(totalAmount / 100).intValue()} pts</span>
+                                                <span class="fw-bold">${(totalAmount / 400).intValue()}</span>
                                             </div>
                                             <hr class="my-3" style="border-color: rgba(255,255,255,0.3);">
                                             <div class="d-flex justify-content-between">
@@ -170,24 +170,25 @@
                                         </div>
 
                                         <!-- Action Buttons -->
-                                        <div class="mt-3 d-grid gap-2">
-                                        <form action="generateBillServlet" method="post" class="d-flex align-items-center">
-                                            <button class="btn btn-success btn-lg" onclick="generateBill()" >
-                                                Generate Bill
-                                            </button>
+                                        <div class="mt-3 d-flex justify-content-center gap-2" >
+                                        	<form action="generateBillServlet" method="post" class="d-flex align-items-center">
+	                                            <button class="btn btn-success btn-lg" onclick="generateBill()" >
+	                                                Generate Bill
+	                                            </button>
                                             </form>
-                                            <button class="btn btn-outline-danger" onclick="clearCart()">
-                                                Clear Cart
-                                            </button>
+                                            <form action="clearBillServlet" method="post"  class="d-flex align-items-center">
+	                                            <button class="btn btn-success btn-lg" onclick="clearCart()">
+	                                                Clear Cart
+	                                            </button>
+                                            </form>
                                         </div>
 
                                     </c:when>
                                     <c:otherwise>
                                         <div class="empty-cart">
                                             <div class="mb-3">
-                                                <svg width="64" height="64" fill="currentColor" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                                </svg>
+
+                                                    
                                             </div>
                                             <h6 class="text-muted">Your cart is empty</h6>
                                             <p class="small text-muted mb-0">Add some items from the table to get started</p>
@@ -212,7 +213,7 @@
                                     <small class="text-muted">Total</small>
                                 </div>
                                 <div class="col-4">
-                                    <div class="h4 text-warning mb-1">${not empty sessionScope.billList ? (totalAmount / 100).intValue() : 0}</div>
+                                    <div class="h4 text-warning mb-1">${not empty sessionScope.billList ? (totalAmount / 400).intValue() : 0}</div>
                                     <small class="text-muted">Points</small>
                                 </div>
                             </div>
@@ -243,7 +244,7 @@
         if (hasItems) {
             if (confirm('Are you sure you want to clear the cart?')) {
 
-                window.location.href = 'clearCartServlet';
+                window.location.href = 'clearBillServlet';
             }
         }
     }

@@ -39,12 +39,15 @@ public class userLoginServlet extends HttpServlet {
 		if(status) {
 		    user loginedUsr = service.getOne(usr);
 
+		    request.setAttribute("popupMessage", "Login Successfully");
 		    RequestDispatcher dispatcher = request.getRequestDispatcher("userDash.jsp");
 		    request.setAttribute("user",loginedUsr);
 		    dispatcher.forward(request,response);
 		}else {
+			request.setAttribute("popupMessage", "Incorrect username or password");
 		    RequestDispatcher dispatcher = request.getRequestDispatcher("userLogin.jsp");
 		    dispatcher.forward(request,response);
+
 		}
 		
 		doGet(request, response);
