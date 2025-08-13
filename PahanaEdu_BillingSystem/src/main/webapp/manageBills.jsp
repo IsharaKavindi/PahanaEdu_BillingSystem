@@ -65,7 +65,7 @@
 </head>
 <body>
 
-<%@ include file="nav.jsp" %>
+<%@ include file="navAdmin.jsp" %>
 
 
 <div class="table-container">

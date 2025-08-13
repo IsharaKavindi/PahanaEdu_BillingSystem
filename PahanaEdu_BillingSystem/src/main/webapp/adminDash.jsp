@@ -79,7 +79,7 @@
     </style>
 </head>
 <body >
-	<%@ include file="nav.jsp" %>
+	<%@ include file="navAdmin.jsp" %>
 
     <div class="dashboard-container">
         <div class="welcome-box">

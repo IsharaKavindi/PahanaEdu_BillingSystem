@@ -290,7 +290,7 @@
         
             <div class="print-section">
                 <button type="submit" class="btn btn-success me-2" >
-                   🖨️ Print Bill
+                   Print Bill
                 </button>
             </div>
 

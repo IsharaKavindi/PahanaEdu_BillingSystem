@@ -49,7 +49,7 @@
 
 </head>
 <body>
-	<%@ include file="nav.jsp" %>
+	<%@ include file="navAdmin.jsp" %>
 
    <div class="col-md-6 text-md-end">
       	<a href="addItems.jsp" class="btn btn-primary">

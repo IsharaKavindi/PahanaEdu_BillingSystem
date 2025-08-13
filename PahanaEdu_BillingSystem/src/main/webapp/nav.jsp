@@ -35,7 +35,7 @@ aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigatio
 </li>
 <li class="nav-item">
 
-<a  class="nav-link" href="home.jsp"><button type="submit" style="background-color: #212529; color: white; border: none;">Exist</button></a>
+<a  class="nav-link" href="home.jsp"><button type="submit" style="background-color: #212529; color: white; border: none;">Logout</button></a>
 
 </li>
 </ul>

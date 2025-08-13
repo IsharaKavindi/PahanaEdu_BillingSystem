@@ -14,8 +14,7 @@
             padding-top: 76px; 
         }
         .bill-sidebar {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-left: 3px solid #007bff;
+            background:  linear-gradient(135deg, #f5f7fa, #c3cfe2);
             max-height: 80vh;
             overflow-y: auto;
         }
@@ -114,7 +113,7 @@
 
             <!-- Right Side - Bill Display -->
             <div class="col-lg-4">
-                <div class="bill-sidebar p-3">
+                <div class="bill-sidebar">
                     <div class="card border-0 shadow">
                         <div class="card-header bg-success text-white">
                             <h5 class="mb-0">Current Bill</h5>
