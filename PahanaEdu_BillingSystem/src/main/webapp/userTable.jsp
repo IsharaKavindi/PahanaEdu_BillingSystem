@@ -52,7 +52,7 @@
 	<%@ include file="navAdmin.jsp" %>
 
    <div class="col-md-6 text-md-end">
-      	<a href="addItems.jsp" class="btn btn-primary">
+      	<a href="userRegister.jsp" class="btn btn-primary">
            + Add New Item
        </a>
    </div>

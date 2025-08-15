@@ -11,6 +11,7 @@
 <body>
 
 	<div class="box">
+		<h3 class="topic">Add Item</h3>
 		<form name="itemForm" method="post" action="addItemServlet" onsubmit="return validateForm()">
 			
 			<div class="form-floating">

@@ -2,12 +2,12 @@ package model;
 
 public class item {
 	
-	String itemid;
-	String title;
-	String author;
-	String category;
-	int price;
-	int quantity;
+	private String itemid;
+	private String title;
+	private String author;
+	private String category;
+	private int price;
+	private int quantity;
 	
 	
 	public String getItemid() {

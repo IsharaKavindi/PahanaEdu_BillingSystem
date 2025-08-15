@@ -67,7 +67,7 @@
 
     <div class="row mb-10 align-items-center" class="container" >
         <div class="col-md-4">
-            <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search by NIC...">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by NIC">
         </div>
         <div class="col-md-2">
             <button id="clearSearch" class="btn btn-outline-secondary w-100" style="display: none;">Clear</button>

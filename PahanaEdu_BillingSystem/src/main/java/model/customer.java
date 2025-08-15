@@ -2,13 +2,13 @@ package model;
 
 public class customer {
 	
-	int id;
-	String name;
-	String nic;
-	String accountnum;
-	String address;
-	String contactno;
-	String email;
+	private int id;
+	private String name;
+	private String nic;
+	private String accountnum;
+	private String address;
+	private String contactno;
+	private String email;
 	
 	
 	

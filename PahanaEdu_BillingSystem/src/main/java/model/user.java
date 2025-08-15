@@ -2,11 +2,12 @@ package model;
 
 public class user {
 	
-	String name;
-	String username;
-	int age;
-	String email;
-	String password;
+	private String name;
+	private String username;
+	private int age;
+	private String email;
+	private String password;
+	
 	
 	
 	public String getName() {

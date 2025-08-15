@@ -2,11 +2,11 @@ package model;
 
 public class billitem {
 	
-	int billid;
-	String itemid;
-	String title;
-	int quantity;
-	int price;
+	private int billid;
+	private String itemid;
+	private String title;
+	private int quantity;
+	private int price;
 	
 	public int getBillid() {
 		return billid;

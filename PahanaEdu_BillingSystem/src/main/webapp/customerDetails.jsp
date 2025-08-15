@@ -11,6 +11,7 @@
 </head>
 <body>
 	<div class="box">
+	<h3 class="topic">Customer Details</h3>
 		<form action="updateCustomerServlet" method="post">
 		<c:set var="cus" value="${customer}"/>	
 			<div class="form-floating mb-3">

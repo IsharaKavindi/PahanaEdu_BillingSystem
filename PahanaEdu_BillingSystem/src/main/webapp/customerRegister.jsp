@@ -12,6 +12,7 @@
 <body>
 	
 	<div class="box">
+		<h3 class="topic">Add Customer</h3>
 		<form id="customerForm" method="post" action="addCustomerServlet">
 			
 			<div class="form-floating mb-3">

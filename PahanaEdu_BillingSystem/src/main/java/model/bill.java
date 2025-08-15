@@ -1,15 +1,15 @@
 package model;
 
 public class bill {
-	int billid;
-	String billnum;
-	String date;
-	String time;
-	int totalitems;
-	int total;
-	int points;
-	int cusid;
-	String cusnic;
+	private int billid;
+	private String billnum;
+	private String date;
+	private String time;
+	private int totalitems;
+	private int total;
+	private int points;
+	private int cusid;
+	private String cusnic;
 	
 	
 	public int getBillid() {

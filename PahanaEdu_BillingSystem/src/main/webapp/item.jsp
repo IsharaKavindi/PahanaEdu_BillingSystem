@@ -12,6 +12,7 @@
 <body>
 
 	<div class="box">
+	<h3 class="topic">Update Item</h3>
 	<form action="updateItemServlet" method="post">
 		<c:set var="itm" value="${item}"/>	
 			<div class="form-floating mb-3">

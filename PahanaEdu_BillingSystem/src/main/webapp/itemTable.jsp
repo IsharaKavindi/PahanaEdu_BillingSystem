@@ -72,7 +72,7 @@ pageEncoding="UTF-8"%>
 
     <div class="row mb-3 align-items-center">
         <div class="col-md-4">
-            <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search by Item ID or Title...">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by Item ID or Title">
         </div>
         <div class="col-md-4">
             <button id="clearSearch" class="btn btn-secondary w-100" style="display: none;">Clear</button>
