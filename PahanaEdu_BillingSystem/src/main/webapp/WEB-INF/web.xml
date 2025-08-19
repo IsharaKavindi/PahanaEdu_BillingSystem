@@ -11,6 +11,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>adminLoginServlet</servlet-name>
+		<servlet-class>servlet.adminLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminLoginServlet</servlet-name>
+		<url-pattern>/adminlog</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>userLoginServlet</servlet-name>
 		<servlet-class>servlet.userLoginServlet</servlet-class>
 	</servlet>
@@ -213,4 +222,6 @@
         <servlet-name>clearBillServlet</servlet-name>
         <url-pattern>/clearBill</url-pattern>
     </servlet-mapping>
+    
+
 </web-app>
