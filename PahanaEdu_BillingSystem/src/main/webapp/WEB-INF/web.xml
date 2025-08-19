@@ -223,5 +223,14 @@
         <url-pattern>/clearBill</url-pattern>
     </servlet-mapping>
     
+   <servlet>
+        <servlet-name>deleteCustomerServlet</servlet-name>
+        <servlet-class>servlet.deleteCustomerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteCustomerServlet</servlet-name>
+        <url-pattern>/deleteCustomer</url-pattern>
+    </servlet-mapping>
 
 </web-app>

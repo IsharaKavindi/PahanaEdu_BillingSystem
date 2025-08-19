@@ -144,5 +144,22 @@ public class customerServices {
 		
 	}
 	
+	
+	public boolean deleteCustomer(customer cus) {
+		try {
+			
+			String query = "Delete from customer where id = '"+cus.getId()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return true;
+		
+	}
+	
 
 }

@@ -117,6 +117,10 @@
 								      <input type="hidden" name="nic" value="${cus.nic}">
 								      <button type="submit" class="btn btn-custom">Update</button>
 								    </form>
+								    <form action="deleteCustomerServlet" method="post">
+								      <input type="hidden" name="id" value="${cus.id}">
+								      <button type="submit" class="btn btn-custom">Delete</button>
+								    </form>
 								  </div>
 								</td>
                             </tr>
