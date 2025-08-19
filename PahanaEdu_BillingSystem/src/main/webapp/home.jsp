@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="css/NewCss.css">
 <style>
 body {
-    background: linear-gradient(135deg, #4a5568, #2d3748, #1a202c);
+	
+    background: linear-gradient(to right, #343a40, #495057);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     margin: 0;
@@ -62,7 +63,7 @@ body {
     color: black;
     font-size: 16px;
     font-weight: 500;
-    padding: 12px 24px;
+    padding: 8px 20px;
     border-radius: 8px;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -133,7 +134,7 @@ body {
             <button type="button" class="btn btn-primary">User Login</button>
         </a>
 
-        <a href="userLogin.jsp">
+        <a href="adminLogin.jsp">
             <button type="button" class="btn btn-primary">Admin Login</button>
         </a>
     </div>
