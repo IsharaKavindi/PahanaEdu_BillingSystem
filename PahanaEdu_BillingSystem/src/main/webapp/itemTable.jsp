@@ -11,10 +11,25 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/NewCss1.css">
 
 <style>
-    body {
+     body {
         background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
         font-family: "Segoe UI", Arial, sans-serif;
     }
+    
+   .table-container {
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+	  position: fixed;
+	  top: 65px; 
+	  left: 0;
+	  right: 0;
+	  background-color: white; 
+	
+	  padding: 0px 20px; 
+	  margin-top:0px;
+	  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+	  overflow-y: auto;
+	   max-height: calc(100vh - 65px);
+	}
     .card {
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -68,9 +83,9 @@ pageEncoding="UTF-8"%>
 
 <%@ include file="nav.jsp" %>
 
-<div class="container mt-4">
+<div class="table-container">
 
-    <div class="row mb-3 align-items-center">
+    <div class="row mb-10 align-items-center">
         <div class="col-md-4">
             <input type="text" id="searchInput" class="form-control" placeholder="Search by Item ID or Title">
         </div>

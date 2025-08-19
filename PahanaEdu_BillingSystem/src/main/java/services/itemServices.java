@@ -81,20 +81,17 @@ public class itemServices {
 	}
 	
 	public boolean updateItem(item itm) {
-		try {
-			
-			String query = "update item SET itemid='"+itm.getItemid()+"',title='"+itm.getTitle()+"', author='"+itm.getAuthor()+"',category='"+itm.getCategory()+"',price='"+itm.getPrice()+"',quantity='"+itm.getQuantity()+"' where itemid='"+itm.getItemid()+"'";
-			
-			Statement statement = DBConnect.getConnection().createStatement();
-			statement.executeUpdate(query);
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-			
-		}
-		return false;
-		
+	    try {
+	        String query = "UPDATE item SET title='"+itm.getTitle()+"', author='"+itm.getAuthor()+"', category='"+itm.getCategory()+"', price='"+itm.getPrice()+"', quantity='"+itm.getQuantity()+"' WHERE itemid='"+itm.getItemid()+"'";
+	        Statement statement = DBConnect.getConnection().createStatement();
+	        int rows = statement.executeUpdate(query);
+	        return rows > 0; // return true if at least 1 row was updated
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
 	}
+
 	
 	
 	public boolean deleteItems(item itm) {
