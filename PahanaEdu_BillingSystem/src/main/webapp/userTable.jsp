@@ -83,11 +83,11 @@
                 <td>${usr.email}</td>
                 <td>${usr.password}</td>
                 <td>
-                  <form action="" method="post" style="margin:0;">
-                    <input type="hidden" name="id" value="">
-                    <input type="hidden" name="nic" value="">
+                  <form action="deleteUserServlet" method="post" style="margin:0;">
+                    <input type="hidden" name="username" value="${usr.username}">
                     <button type="submit">Delete</button>
                   </form>
+                  
                 </td>
               </tr>
             </c:forEach>

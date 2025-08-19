@@ -95,8 +95,23 @@ public class userServices {
 			e.printStackTrace();
 			return null;
 		}
-		
-		
+			
 	}
 
+	
+	public boolean deleteUser(user usr) {
+		try {
+			
+			String query = "Delete from user where username = '"+usr.getUsername()+"'";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return true;
+		
+	}
 }

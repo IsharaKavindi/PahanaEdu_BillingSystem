@@ -233,4 +233,14 @@
         <url-pattern>/deleteCustomer</url-pattern>
     </servlet-mapping>
 
+   <servlet>
+        <servlet-name>deleteUserServlet</servlet-name>
+        <servlet-class>servlet.deleteUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteUserServlet</servlet-name>
+        <url-pattern>/deleteUser</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
