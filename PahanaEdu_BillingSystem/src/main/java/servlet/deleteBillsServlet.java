@@ -37,6 +37,7 @@ public class deleteBillsServlet extends HttpServlet {
 		billServices service = new billServices();
 		service.deleteBills(bl);
 		
+		request.setAttribute("popupMessage", "Bill deleted successfully");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("manageBillsServlet");
 		dispatcher.forward(request,response);
 	}

@@ -30,7 +30,7 @@ public class addBillServlet extends HttpServlet {
 
             String billnum = trimOrNull(request.getParameter("billnum"));
             if (billnum == null) {
-                forwardWithError(request, response, "Bill number is missing", "bill.jsp");
+                forwardWithError(request, response, "Bill number is missing", "generateBillServlet");
                 return;
             }
             bl.setBillnum(billnum);
@@ -41,14 +41,16 @@ public class addBillServlet extends HttpServlet {
             bl.setPoints(parseIntOrDefault(request.getParameter("points"), 0));
             int cusid = parseIntOrDefault(request.getParameter("cusid"), -1);
             if (cusid <= 0) {
-                forwardWithError(request, response, "Customer must be selected", "bill.jsp");
+            	request.setAttribute("popupMessage", "Please make sure to add customer before printing the bill.");
+                forwardWithError(request, response, "Customer must be selected", "generateBillServlet");
                 return;
             }
             bl.setCusid(cusid);
             bl.setCusnic(request.getParameter("cusnic"));
 
             if (bl.getTotalitems() <= 0) {
-                forwardWithError(request, response, "Please add items to the bill", "bill.jsp");
+            	request.setAttribute("popupMessage", "Please make sure to add customer before printing the bill.");
+                forwardWithError(request, response, "Please add items to the bill", "generateBillServlet");
                 return;
             }
 
@@ -69,7 +71,8 @@ public class addBillServlet extends HttpServlet {
             e.printStackTrace();
             request.setAttribute("error", "Error creating bill: " + e.getMessage());
         }
-
+        
+        request.setAttribute("popupMessage", "Bill Printed Successfully");
         RequestDispatcher dispatcher = request.getRequestDispatcher("viewBillingServlet");
         dispatcher.forward(request, response);
 

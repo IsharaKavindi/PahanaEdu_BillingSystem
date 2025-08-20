@@ -36,6 +36,7 @@ public class viewBillHistory extends HttpServlet {
 		ArrayList<bill> bill = service.getAllBills();
 		request.setAttribute("bill",bill);
 		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("billTable.jsp");
 		dispatcher.forward(request,response);
 	}

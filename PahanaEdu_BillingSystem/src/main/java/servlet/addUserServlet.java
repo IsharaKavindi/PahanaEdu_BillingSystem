@@ -40,7 +40,7 @@ public class addUserServlet extends HttpServlet {
 		userServices service = new userServices();
 		service.regUser(usr);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewUsersServlet");
 		
 		dispatcher.forward(request,response);
 		

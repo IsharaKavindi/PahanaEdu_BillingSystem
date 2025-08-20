@@ -93,7 +93,7 @@
 	
 		<button class="btn-start" type="submit">Start Billing</button>
 	</form>
-			<c:if test="${not empty popupMessage}">
+		<c:if test="${not empty popupMessage}">
 		    <script>
 		        alert("${popupMessage}");
 		    </script>

@@ -117,6 +117,11 @@
     </div>
 </div>
 
+		<c:if test="${not empty popupMessage}">
+		    <script>
+		        alert("${popupMessage}");
+		    </script>
+		</c:if>
 
 
 </body>

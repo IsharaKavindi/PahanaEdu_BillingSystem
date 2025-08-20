@@ -289,7 +289,7 @@
 
         
             <div class="print-section">
-                <button type="submit" class="btn btn-success me-2" >
+                <button type="submit" class="btn btn-success me-2"  >
                    Print Bill
                 </button>
             </div>
@@ -298,6 +298,11 @@
    </div>
    
 </div>
+		<c:if test="${not empty popupMessage}">
+		    <script>
+		        alert("${popupMessage}");
+		    </script>
+		</c:if>
 
 <script>
 

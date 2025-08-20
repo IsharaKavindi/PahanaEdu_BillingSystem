@@ -45,9 +45,10 @@ public class addItemServlet extends HttpServlet {
 		
 		 ArrayList<item> itemList = service.getAllItems();
 	        
-	        // Set as request attribute
+
 	        request.setAttribute("items", itemList);
 		
+	    request.setAttribute("popupMessage", "Item added successfully");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("viewItemServlet");
 		
 		dispatcher.forward(request,response);

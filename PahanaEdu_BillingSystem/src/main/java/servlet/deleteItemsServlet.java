@@ -37,6 +37,7 @@ public class deleteItemsServlet extends HttpServlet {
 		itemServices service = new itemServices();
 		service.deleteItems(itm);
 		
+		request.setAttribute("popupMessage", "Item deleted successfully");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("viewItemServlet");
 		dispatcher.forward(request,response);
 	}

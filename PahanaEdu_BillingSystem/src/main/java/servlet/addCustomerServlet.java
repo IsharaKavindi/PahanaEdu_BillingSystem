@@ -44,6 +44,7 @@ public class addCustomerServlet extends HttpServlet {
 		customerServices service = new customerServices();
 		service.regCustomer(cus);
 		
+		request.setAttribute("popupMessage", "Customer added successfully");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("viewCustomersServlet");
 		
 		dispatcher.forward(request,response);

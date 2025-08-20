@@ -53,7 +53,7 @@
 
    <div class="col-md-6 text-md-end">
       	<a href="userRegister.jsp" class="btn btn-primary">
-           + Add New Item
+           + Add New Cashier
        </a>
    </div>
 
@@ -97,6 +97,12 @@
     </div>
   </div>
 </div>
+
+		<c:if test="${not empty popupMessage}">
+		    <script>
+		        alert("${popupMessage}");
+		    </script>
+		</c:if>
 
 </body>
 </html>

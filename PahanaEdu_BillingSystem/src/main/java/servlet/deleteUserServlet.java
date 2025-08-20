@@ -35,6 +35,7 @@ public class deleteUserServlet extends HttpServlet {
 		userServices service = new userServices();
 		service.deleteUser(usr);
 		
+		request.setAttribute("popupMessage", "Cashier deleted successfully");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("viewUsersServlet");
 		dispatcher.forward(request,response);
 	}

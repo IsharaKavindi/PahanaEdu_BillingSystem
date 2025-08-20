@@ -38,12 +38,13 @@ public class customerBillServlet extends HttpServlet {
 		boolean status = service.validateCus(cus);
 		if(status) {
 		    customer getedCus = service.getCus(cus);
-
+		    request.setAttribute("popupMessage", "Customer added to bill successfully");
 		    RequestDispatcher dispatcher = request.getRequestDispatcher("generateBill.jsp");
 		    request.setAttribute("customer",getedCus);
 		    dispatcher.forward(request,response);
 		}else {
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+			request.setAttribute("popupMessage", "Invalid customer details");
+		    RequestDispatcher dispatcher = request.getRequestDispatcher("generateBill.jsp");
 		    dispatcher.forward(request,response);
 		}
 		

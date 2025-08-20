@@ -37,6 +37,7 @@ public class deleteCustomerServlet extends HttpServlet {
 		customerServices service = new customerServices();
 		service.deleteCustomer(cus);
 		
+		request.setAttribute("popupMessage", "Customer deleted successfully");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("viewCustomersServlet");
 		dispatcher.forward(request,response);
 	}

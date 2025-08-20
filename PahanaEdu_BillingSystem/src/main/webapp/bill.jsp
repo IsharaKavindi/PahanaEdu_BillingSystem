@@ -177,7 +177,7 @@
                                             </form>
                                             <form action="clearBillServlet" method="post"  class="d-flex align-items-center">
 	                                            <button class="btn btn-success btn-lg" onclick="clearCart()">
-	                                                Clear Cart
+	                                                Clear Bill
 	                                            </button>
                                             </form>
                                         </div>
@@ -189,7 +189,7 @@
 
                                                     
                                             </div>
-                                            <h6 class="text-muted">Your cart is empty</h6>
+                                            <h6 class="text-muted">Your bill is empty</h6>
                                             <p class="small text-muted mb-0">Add some items from the table to get started</p>
                                         </div>
                                     </c:otherwise>
@@ -222,12 +222,18 @@
             </div>
         </div>
     </div>
+    
+    	<c:if test="${not empty popupMessage}">
+		    <script>
+		        alert("${popupMessage}");
+		    </script>
+		</c:if>
 
     <script>
     function generateBill() {
         const hasItems = ${not empty sessionScope.billList};
         if (!hasItems) {
-            alert('Please add some items to the cart first!');
+            alert('Please add some items to the Bill first!');
             return;
         }
         
@@ -241,7 +247,7 @@
     function clearCart() {
         const hasItems = ${not empty sessionScope.billList};
         if (hasItems) {
-            if (confirm('Are you sure you want to clear the cart?')) {
+            if (confirm('Are you sure you want to clear the bill?')) {
 
                 window.location.href = 'clearBillServlet';
             }

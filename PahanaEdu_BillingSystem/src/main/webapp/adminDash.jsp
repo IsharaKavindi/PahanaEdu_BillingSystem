@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,6 +96,12 @@
 			<form action="manageBillsServlet" method="post">
 				<button class="btn-start" type="submit">Manage Bills</button>
 			</form>
+			
+			<c:if test="${not empty popupMessage}">
+		    <script>
+		        alert("${popupMessage}");
+		    </script>
+		</c:if>
 	    </div>
     </div>
 

@@ -85,12 +85,12 @@ pageEncoding="UTF-8"%>
 
 <div class="table-container">
 
-    <div class="row mb-10 align-items-center">
+    <div class="row mb-6 align-items-center">
         <div class="col-md-4">
             <input type="text" id="searchInput" class="form-control" placeholder="Search by Item ID or Title">
         </div>
         <div class="col-md-4">
-            <button id="clearSearch" class="btn btn-secondary w-100" style="display: none;">Clear</button>
+            <button id="clearSearch" class="btn btn-secondary w-45" style="display: none;">Clear</button>
         </div>
         <div class="col-md-4 text-md-end">
             <a href="addItems.jsp" class="btn btn-primary">
@@ -141,7 +141,11 @@ pageEncoding="UTF-8"%>
         </div>
     </div>
 </div>
-
+		<c:if test="${not empty popupMessage}">
+		    <script>
+		        alert("${popupMessage}");
+		    </script>
+		</c:if>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

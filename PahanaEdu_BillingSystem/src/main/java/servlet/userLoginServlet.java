@@ -45,7 +45,7 @@ public class userLoginServlet extends HttpServlet {
 		    dispatcher.forward(request,response);
 		}else {
 			request.setAttribute("popupMessage", "Incorrect username or password");
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("userLogin.jsp");
+		    RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
 		    dispatcher.forward(request,response);
 
 		}
