@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/NewCss.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Login</title>
 </head>
 <body style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2)">
 	<div class="box">
